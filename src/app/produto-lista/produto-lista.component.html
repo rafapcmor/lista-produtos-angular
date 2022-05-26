@@ -1,9 +1,14 @@
-<p>
 <h2>Produtos</h2>
-
-<div *ngFor="let produto of produtos">
-<h3>
-{{ product.name }}
-</h3>
+<div class="container" *ngFor="let produto of produtos">
+  <h3 class="text-primary">
+    <strong>
+      <p [title]="produto.nome + 'details'">
+        {{ produto.nome }}
+      </p>
+    </strong>
+  </h3>
+  <div>
+    <img src="{{ produto.imagePath }}" width="200" alt="" />
+  </div>
+  <p *ngIf="produto.descricao">Descrição: {{ produto.descricao }}</p>
 </div>
-</p>
