@@ -8,7 +8,7 @@
     </strong>
   </h3>
   <div>
-    <img src="{{ produto.imagePath }}" width="200" alt="" />
+    <img [src]="produto.image" />
   </div>
   <p *ngIf="produto.descricao">Descrição: {{ produto.descricao }}</p>
 </div>
