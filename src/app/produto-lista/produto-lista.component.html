@@ -1,14 +1,17 @@
 <h2>Produtos</h2>
-<div class="container" *ngFor="let produto of produtos">
-  <h3 class="text-primary">
-    <strong>
-      <p [title]="produto.nome + 'details'">
-        {{ produto.nome }}
-      </p>
-    </strong>
-  </h3>
-  <div>
-    <img [src]="produto.image" />
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-lg-4" *ngFor="let produto of produtos">
+      <div class="card" style="width: 18rem;">
+        <img src="{{ produto.imagePath }}" class="card-img-top" alt="..." />
+        <div class="card-body">
+          <h5 class="card-title" style="color: #0368ff;">{{ produto.nome }}</h5>
+          <p class="card-text">
+            {{ produto.descricao }}
+          </p>
+          <p class="card-text">R$ {{ produto.preco }}</p>
+        </div>
+      </div>
+    </div>
   </div>
-  <p *ngIf="produto.descricao">Descrição: {{ produto.descricao }}</p>
 </div>
